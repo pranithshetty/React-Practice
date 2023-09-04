@@ -1,0 +1,23 @@
+bundlers : vite parcel, webpack
+package-lock : locks the current version of the packages,( maintains current version of package and also stores a hash)
+            ^ means the version can update automatically(package.json)
+
+dev run command:
+    npx parcel index.html
+build command:
+    npx parcel build index.html
+
+polyfils: code for supporting older browser
+HMR- hot module reload
+
+remove console log
+    npm i bable-plugin-transform-remove-console
+
+babel: js compiler to convert modern js to browser compatible js for browser
+
+config driven UI
+(React fiber,
+VDOM-representation of DOM,
+reconciliation algorithm - diff btw dom and VDom and rerender only needed stuff, keys help in this) diff tree.
+
+React has one way data binding
