@@ -1,20 +1,17 @@
 import { restaurantList } from "../constants";
 import { useState } from "react";
-const RestaurantCard = ({ name, cusines, rating, image }) => {
-	return (
-		<div className="restaurant-card">
-			<img alt="Burger" src={image} />
-			<h2>{name}</h2>
-			<h3>{cusines.join(",")}</h3>
-			<h4>{rating}</h4>
-		</div>
-	);
+import RestaurantCard from "./RestaurantCard";
+
+const filterRestaurants = (searchText, restaurants) => {
+	return searchText === ""
+		? restaurantList
+		: restaurants.filter((restaurant) =>
+				restaurant.name.toLowerCase().includes(searchText.toLowerCase())
+		  );
 };
 const Body = () => {
-	const [searchText, searchTextCB] = useState("");
-	searchTextHandler = (e) => searchTextCB(e.target.value);
-	console.log(searchText);
-
+	const [searchText, setSearchText] = useState("");
+	const [restaurants, setRestaurant] = useState(restaurantList);
 	return (
 		<>
 			<div className="search-container">
@@ -22,12 +19,23 @@ const Body = () => {
 					type="text"
 					placeholder="Search"
 					value={searchText}
-					onChange={(e) => searchTextHandler(e)}
+					onChange={(e) => setSearchText(e.target.value)}
 				/>
-				<button>Search</button>
+				<button
+					onClick={() => {
+						const filterdRestaurants = filterRestaurants(
+							searchText,
+							restaurants
+						);
+						setRestaurant(filterdRestaurants);
+						setSearchText("");
+					}}
+				>
+					Search
+				</button>
 			</div>
 			<div className="restaurant-list">
-				{restaurantList?.map((restaurant, key) => {
+				{restaurants?.map((restaurant, key) => {
 					return <RestaurantCard key={restaurant.name + key} {...restaurant} />;
 				})}
 			</div>
