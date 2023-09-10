@@ -3,8 +3,16 @@ import ReactDOM from "react-dom/client";
 import App from "./src/App";
 
 //session 1
-const heading = React.createElement("h1", { id: "heading" }, "Hello");
-const heading2 = React.createElement("h2", { id: "heading2" }, "World");
+const heading = React.createElement(
+	"h1",
+	{ id: "heading", key: "h1" },
+	"Hello"
+);
+const heading2 = React.createElement(
+	"h2",
+	{ id: "heading2", key: "h1" },
+	"World"
+);
 const container = React.createElement("div", { id: "container" }, [
 	heading,
 	heading2,

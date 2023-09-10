@@ -35,6 +35,7 @@
 .restaurant-list {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-around;
 }
 .search-container > input {
 	margin: 10px;
@@ -53,4 +54,22 @@
 	cursor: pointer;
 	border-radius: 10px;
 	transition: ease-out 0.5s;
+}
+.shimmer {
+	padding: 10px;
+	margin: 10px;
+	width: 200px;
+	height: 250px;
+	background: rgb(187, 187, 187);
+	color: grey;
+	display: inline-block;
+	mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/300% 100%;
+	background-repeat: no-repeat;
+	animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+	100% {
+		mask-position: left;
+	}
 }
