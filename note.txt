@@ -21,3 +21,8 @@ VDOM-representation of DOM,
 reconciliation algorithm - diff btw dom and VDom and rerender only needed stuff, keys help in this) diff tree.
 
 React has one way data binding
+
+
+routing:
+    -client side routing.
+    -server side routing.

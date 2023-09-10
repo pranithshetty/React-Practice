@@ -1,8 +1,11 @@
+/**
+ * session 1 data do not use for project
+ *
+ */
+
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./src/App";
 
-//session 1
 const heading = React.createElement(
 	"h1",
 	{ id: "heading", key: "h1" },
@@ -24,8 +27,10 @@ const jsxHeading = (
 		<h1>This is JSX</h1>
 	</div>
 );
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 //root.render(heading);
 //root.render(container);
 // root.render(jsxHeading);
-root.render(<App />);
+// root.render(<App />);
+root.render(root);
