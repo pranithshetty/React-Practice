@@ -9,6 +9,7 @@ import PageNotFound from "./components/PageNotFound";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Profile from "./components/Profile";
 //Food App --------------------------------
 
 const AppLayout = () => {
@@ -28,7 +29,11 @@ const appRouter = createBrowserRouter([
 		errorElement: <PageNotFound />,
 		children: [
 			{ path: "/", element: <Body /> },
-			{ path: "/about", element: <About /> },
+			{
+				path: "/about", // '/' means from root
+				element: <About />,
+				children: [{ path: "profile", element: <Profile /> }],
+			},
 			{ path: "/contact", element: <ContactUs /> },
 			{ path: "/restaurant/:id", element: <RestaurantMenu /> },
 		],
