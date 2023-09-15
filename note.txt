@@ -13,7 +13,7 @@ HMR- hot module reload
 remove console log
     npm i bable-plugin-transform-remove-console
 
-babel: js compiler to convert modern js to browser compatible js for browser
+babel: js compiler to convert modern js(jsx) to browser compatible js for browser
 
 config driven UI
 (React fiber,
