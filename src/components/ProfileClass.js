@@ -43,7 +43,7 @@ class ProfileClass extends React.Component {
 		console.log("child ComponentDidMount" + this.props.name);
 		//api calls in here
 		const data = await fetch("https://api.github.com/users/pranithshetty");
-		const json = data.json();
+		const json = await data.json();
 		this.setState({ userInfo: json });
 		console.log(json);
 	}
