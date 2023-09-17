@@ -1,6 +1,10 @@
-#root {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* #root {
 	background: rgb(255, 255, 255);
-}
+} 
 
 .header {
 	display: flex;
@@ -27,15 +31,12 @@
 	padding: 5px;
 	margin: 8px;
 	border-radius: 8%;
-	/* border: 1px solid black; */
 
 	width: 200px;
 	height: auto;
 	overflow: hidden;
 	white-space: nowrap;
 	box-shadow: 10px 10px 5px rgba(180, 180, 180, 0.49);
-	/* overflow-wrap: break-word; */
-}
 .restaurant-card > img {
 	border-radius: 8%;
 	width: 100%;
@@ -82,3 +83,4 @@
 		mask-position: left;
 	}
 }
+*/

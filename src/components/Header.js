@@ -2,14 +2,14 @@ import { LOGO_CDN, navItems } from "../constants";
 import { Link } from "react-router-dom";
 export const Title = () => {
 	//named export
-	return <img alt="Tomato" className="logo" src={LOGO_CDN} />;
+	return <img alt="Tomato" className="h-28 p-2" src={LOGO_CDN} />;
 };
 const Header = () => {
 	return (
-		<div className="header">
+		<div className="flex justify-between bg-slate-100 rounded-lg shadow-lg my-3 py-2 ">
 			<Title />
-			<div key="nav-items" className="nav-items">
-				<ul key="ul" className="nav-items">
+			<div key="nav-items">
+				<ul key="ul" className="flex py-10">
 					{/* {navItems.map((item, key) => {
 						return (
 							<Link to={item.toLowerCase()}>
@@ -18,19 +18,19 @@ const Header = () => {
 						);
 					})} */}
 					<Link to="/">
-						<li>Home</li>
+						<li className="px-2">Home</li>
 					</Link>
 					<Link to="/contact">
-						<li>Contact</li>
+						<li className="px-2">Contact</li>
 					</Link>
 					<Link to="/about">
-						<li>About</li>
+						<li className="px-2">About</li>
 					</Link>
 					<Link to="/instamart">
-						<li>Insta Mart</li>
+						<li className="px-2">Insta Mart</li>
 					</Link>
 
-					<li>Cart</li>
+					<li className="px-2">Cart</li>
 				</ul>
 			</div>
 		</div>
