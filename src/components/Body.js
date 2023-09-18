@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterRestaurants } from "../utils/helper";
 import useOnline from "../utils/useOnline"; //custom hook
 import useRestaurantList from "../utils/useRestaurantList"; //
+import UserContext from "../utils/UserContext";
+
 const Body = () => {
 	const [searchText, setSearchText] = useState("");
+	const { user, setUser } = useContext(UserContext);
 
 	const { allRestaurants, filterdRestaurants, setFilterdRestaurants } =
 		useRestaurantList();
@@ -39,6 +42,14 @@ const Body = () => {
 				>
 					Search
 				</button>
+				<input
+					value={user.name}
+					onChange={(e) => setUser({ ...user, name: e.target.value })}
+				/>
+				<input
+					value={user.email}
+					onChange={(e) => setUser({ ...user, email: e.target.value })}
+				/>
 			</div>
 			<div className="flex flex-wrap justify-evenly">
 				{filterdRestaurants.length === 0 ? <h1>Not Found</h1> : null}
