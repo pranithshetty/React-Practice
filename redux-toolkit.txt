@@ -1,0 +1,26 @@
+
+button click => dispatch action =>"reducer function" function called => updated store slice
+"selector" used to read from store slice. (subscribed to store)
+
+npm i @redux/tookit - redux core
+npm i react-redux - react redux bridge
+
+-create store
+---Configure store rtk
+
+-provide store using <Provide store={store}/> component react-redux
+
+-const cartSlice = createSlice({
+    name:
+    initialState:
+    reducer:{
+        addItem:(state,action)=>{
+            state = action.payload
+        }
+    }
+})
+---export const {addItem} = cartSlice.actions 
+---export cartSlice.reducer 
+
+-put slice in store.js
+    {reducer:{cart:cartSlice, user:userSlice}}

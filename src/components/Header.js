@@ -2,6 +2,7 @@ import { LOGO_CDN, navItems } from "../constants";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 export const Title = () => {
 	//named export
@@ -9,6 +10,7 @@ export const Title = () => {
 };
 const Header = () => {
 	const { user } = useContext(UserContext);
+	const cartItems = useSelector((store) => store.cart.items);
 	return (
 		<div className="flex justify-between bg-slate-100 rounded-lg shadow-lg my-3 py-2 ">
 			<Title />
@@ -33,8 +35,9 @@ const Header = () => {
 					<Link to="/instamart">
 						<li className="px-2">Insta Mart</li>
 					</Link>
-
-					<li className="px-2">Cart</li>
+					<Link to="/cart">
+						<li className="px-2">Cart {cartItems.length}</li>
+					</Link>
 				</ul>
 				<span className="p-10 m-2 font-bold">{user.name}</span>
 			</div>
