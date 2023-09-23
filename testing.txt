@@ -1,0 +1,15 @@
+-Unit testing
+-Integration testing
+
+React testing library - uses jest behind the sceaans
+
+npm i --save-dev testing-library/react
+npm i -D jest
+npx jext --init
+
+npm i-D jest-environment-jsdom
+
+configure bable for import error: https://jestjs.io/docs/next/getting-started#using-babel
+(search bable jest config) install bable-jest bable-preset-env, bable core
+
+install @bable/preset-react

@@ -26,6 +26,7 @@ const Body = () => {
 		<>
 			<div className="p-2 m-2 bg-slate-100 shadow-lg">
 				<input
+					data-testid="search-bar"
 					className="p-2 mx-2 rounded-lg"
 					type="text"
 					placeholder="Search"
@@ -34,6 +35,7 @@ const Body = () => {
 				/>
 				<button
 					className="p-2 mx-2 text-slate-200 font-bold rounded-lg bg-blue-300"
+					data-testid="search-btn"
 					onClick={() => {
 						const data = filterRestaurants(searchText, allRestaurants);
 						setFilterdRestaurants(data);
@@ -51,7 +53,7 @@ const Body = () => {
 					onChange={(e) => setUser({ ...user, email: e.target.value })}
 				/>
 			</div>
-			<div className="flex flex-wrap justify-evenly">
+			<div className="flex flex-wrap justify-evenly" data-testid="rest-list">
 				{filterdRestaurants.length === 0 ? <h1>Not Found</h1> : null}
 				{filterdRestaurants?.map((restaurant) => {
 					return (

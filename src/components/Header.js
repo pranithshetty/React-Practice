@@ -6,7 +6,9 @@ import { useSelector } from "react-redux";
 
 export const Title = () => {
 	//named export
-	return <img alt="Tomato" className="h-28 p-2" src={LOGO_CDN} />;
+	return (
+		<img data-testid="logo" alt="Tomato" className="h-28 p-2" src={LOGO_CDN} />
+	);
 };
 const Header = () => {
 	const { user } = useContext(UserContext);
@@ -36,7 +38,9 @@ const Header = () => {
 						<li className="px-2">Insta Mart</li>
 					</Link>
 					<Link to="/cart">
-						<li className="px-2">Cart {cartItems.length}</li>
+						<li className="px-2" data-testid="cart">
+							Cart {cartItems.length}
+						</li>
 					</Link>
 				</ul>
 				<span className="p-10 m-2 font-bold">{user.name}</span>

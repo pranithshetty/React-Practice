@@ -31,6 +31,5 @@ const jsxHeading = (
 const root = ReactDOM.createRoot(document.getElementById("root"));
 //root.render(heading);
 //root.render(container);
-// root.render(jsxHeading);
+root.render(jsxHeading);
 // root.render(<App />);
-root.render(root);

@@ -31,13 +31,14 @@ const RestaurantMenu = () => {
 				<h2 className="p-1 m-1">{restaurant?.city}</h2>
 				<h2 className="p-1 m-1">{restaurant?.avgRating} stars</h2>
 			</div>
-			<div>
+			<div data-testid="menu">
 				<h2 className="text-xl font-extrabold p-4 m-2">Menu</h2>
 				{restaurantMenu.map((item) => {
 					return (
 						<div className="flex items-center">
 							<h1 key={item?.card?.info?.id}>{item?.card?.info?.name}</h1>
 							<button
+								data-testid="add-item-btn"
 								className="p-1 m-2  bg-green-300"
 								onClick={() => handleAddItem(item?.card?.info)}
 							>
