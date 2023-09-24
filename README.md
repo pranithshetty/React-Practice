@@ -1,3 +1,5 @@
-# React-Practice-1
+# Swiggy-Clone
 
-React refresher project
+React Fundamentals
+
+enable-cors to run, use cors extention on browser
